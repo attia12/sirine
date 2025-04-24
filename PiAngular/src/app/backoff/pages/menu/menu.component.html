@@ -1,0 +1,135 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Menu List</h2>
+  <div class="text-center mb-4">
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newMenuModal" (click)="openCreateMode()">
+      <i class="bi bi-plus-lg"></i> Add New Menu
+    </button>
+  </div>
+  <div class="row">
+    <div *ngFor="let menu of menus" class="col-md-4">
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title">{{ menu.nomMenu }}</h5>
+        </div>
+        <div class="card-body">
+          <h6 class="card-subtitle mb-3 text-muted">
+            <i class="bi bi-calendar"></i>
+            {{ menu.dateDebut }} to {{ menu.dateFin }}
+          </h6>
+          <div class="mb-3">
+            <span class="badge" [ngClass]="{
+              'bg-success': menu.statut === 'VALIDE',
+              'bg-warning': menu.statut === 'EN_ATTENTE',
+              'bg-danger': menu.statut === 'REJETE'
+            }">
+              {{ menu.statut | titlecase }}
+            </span>
+            <span class="badge ms-2" [ngClass]="{
+              'bg-success': menu.confirme === true,
+              'bg-danger': menu.confirme === false
+            }">
+              {{ menu.confirme ? 'Confirmed' : 'Not Confirmed' }}
+            </span>
+          </div>
+
+          <!-- Plats Included -->
+          <h6 class="mt-4">Plats Included:</h6>
+          <ul class="list-group">
+            <li *ngFor="let plat of menu.plats" class="list-group-item">
+              <h6 class="mb-1">{{ plat.nomPlat }}</h6>
+              <p class="mb-1">
+                <strong>Type:</strong> {{ plat.typePlat }} |
+                <strong>Calories:</strong> {{ plat.calories }} |
+                <strong>Regime:</strong> {{ plat.regime }}
+              </p>
+              <small class="text-muted">Allergens: {{ plat.allergenes }}</small>
+              <br>
+              <span class="badge mt-2" [ngClass]="{
+                'bg-success': plat.statutPlat === 'CONFIRME',
+                'bg-danger': plat.statutPlat === 'ANNULE'
+              }">
+                {{ plat.statutPlat }}
+              </span>
+            </li>
+          </ul>
+
+          <!-- Show the select dropdown if no plats are associated -->
+          <div *ngIf="!menu.plats || menu.plats.length === 0">
+            <h6 class="mt-4">Select Plats to Associate:</h6>
+
+            <!-- Display selected plats as chips (with close icon) -->
+            <div class="mb-3">
+              <span  style="color: #0a0c0d" class="badge bg-secondary me-2 mb-2" *ngFor="let plat of selectedPlats; let i = index">
+                {{ plat.nomPlat }}
+                <button type="button" class="btn-close btn-sm ms-2" (click)="removeSelectedPlat(i)" aria-label="Remove"></button>
+              </span>
+            </div>
+
+            <!-- List of plats to click and select -->
+            <div *ngFor="let plat of allPlats" class="list-group mb-2">
+              <button type="button" class="list-group-item list-group-item-action"
+                      [disabled]="isPlatSelected(plat)"
+                      (click)="addPlatToSelection(plat)">
+                {{ plat.nomPlat }}
+              </button>
+
+            </div>
+            <button class="btn btn-primary mt-3" [disabled]="selectedPlats.length === 0" (click)="associatePlatsToMenu(menu.idMenu)">Associate Plats</button>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-warning btn-sm me-2" (click)="openEditMode(menu)">
+            <i class="bi bi-pencil"></i> Update Menu
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteMenu(menu.idMenu)">
+            <i class="bi bi-trash"></i> Delete Menu
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Adding/Editing Menu -->
+<div class="modal fade" id="newMenuModal" #newMenuModal tabindex="-1" aria-labelledby="newMenuModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newMenuModalLabel">{{ isEditMode ? 'Edit Menu' : 'Add New Menu' }}</h5>
+        <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="isEditMode ? updateMenu() : addNewMenu()">
+          <div class="mb-3">
+            <label for="menuName" class="form-label">Menu Name</label>
+            <input type="text" class="form-control" id="menuName" [(ngModel)]="newMenu.nomMenu" name="nomMenu" required />
+          </div>
+          <div class="mb-3">
+            <label for="dateDebut" class="form-label">Start Date</label>
+            <input type="date" class="form-control" id="dateDebut" [(ngModel)]="newMenu.dateDebut" name="dateDebut" required />
+          </div>
+          <div class="mb-3">
+            <label for="dateFin" class="form-label">End Date</label>
+            <input type="date" class="form-control" id="dateFin" [(ngModel)]="newMenu.dateFin" name="dateFin" required />
+          </div>
+          <div class="mb-3">
+            <label for="statut" class="form-label">Status</label>
+            <select class="form-select" id="statut" [(ngModel)]="newMenu.statut" name="statut" required>
+              <option value="VALIDE">Valid</option>
+              <option value="EN_ATTENTE">Pending</option>
+              <option value="REJETE">Rejected</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="confirme" class="form-label">Confirmed</label>
+            <select class="form-select" id="confirme" [(ngModel)]="newMenu.confirme" name="confirme" required>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success">{{ isEditMode ? 'Update Menu' : 'Save Menu' }}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

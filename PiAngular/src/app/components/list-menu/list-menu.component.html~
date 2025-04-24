@@ -1,0 +1,121 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-5 font-weight-bold text-primary">Confirmed Menus</h2>
+
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let menu of displayedMenus">
+      <div class="card shadow-lg border-light rounded">
+        <!-- Menu Header -->
+        <div class="card-header text-center bg-primary text-white rounded-top">
+          <h5 class="card-title text-uppercase font-weight-bold">{{ menu.nomMenu }}</h5>
+          <p class="card-text">
+            <strong>Status:</strong> {{ menu.statut }}<br>
+            <strong>Start Date:</strong> {{ menu.dateDebut | date:'mediumDate' }}<br>
+            <strong>End Date:</strong> {{ menu.dateFin | date:'mediumDate' }}
+          </p>
+        </div>
+
+        <!-- Plat details -->
+        <div class="card-body">
+          <h6 class="font-weight-bold text-primary">Plats:</h6>
+          <ul>
+            <li *ngFor="let plat of getVisiblePlats(menu)">
+              <div class="plat-item">
+                <strong>{{ plat.nomPlat }}</strong><br>
+                <small>{{ plat.typePlat }} - {{ plat.regime }} ({{ plat.calories }} calories)</small><br>
+                <p><strong>Allergens:</strong> {{ plat.allergenes }}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Load More Button -->
+        <div *ngIf="menu.plats.length > visiblePlatCount[menu.idMenu]" class="text-center mt-3">
+          <button class="btn btn-outline-info btn-sm rounded-pill px-4 py-2" (click)="loadMorePlats(menu.idMenu)">
+            Load More ({{ menu.plats.length - visiblePlatCount[menu.idMenu] }} remaining)
+          </button>
+        </div>
+
+        <!-- Like/Dislike Button -->
+        <div class="card-footer bg-light rounded-bottom">
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <button class="btn btn-sm rounded-pill"
+                    [ngClass]="{
+                      'btn-primary': menu.liked,
+                      'btn-danger': menu.disliked
+                    }"
+                    (click)="toggleLikeDislike(menu.idMenu, 1)">
+              <i class="fa"
+                 [ngClass]="{
+                   'fa-thumbs-up': menu.liked,
+                   'fa-thumbs-down': menu.disliked
+                 }">
+              </i>
+              {{ menu.liked ? 'Liked' : menu.disliked ? 'Disliked' : 'Like' }}
+              ({{ menu.likesCount }} Likes, {{ menu.dislikesCount }} Dislikes)
+            </button>
+            <button class="btn btn-sm rounded-pill btn-outline-secondary" >
+               <!-- Comment icon -->
+              <span class="badge bg-info ms-2"> <i (click)="toggleCommentBox(menu.idMenu)" class="fa fa-comment"></i>{{ menu.comments.length }}</span>
+            </button>
+          </div>
+
+          <!-- Comment Section -->
+          <div *ngIf="menu.showCommentBox" class="mt-2">
+            <!-- Display first 3 comments -->
+            <div *ngFor="let comment of menu.visibleComments" class="comment-item d-flex align-items-start mb-3">
+              <!-- User's profile picture -->
+              <div class="profile-pic mr-3">
+                <img [src]="comment.user.profilePicture" alt="{{ comment.user.username }}" class="rounded-circle" width="40" height="40">
+              </div>
+
+              <!-- Comment Content -->
+              <div class="comment-content">
+                <div class="d-flex justify-content-between">
+                  <strong>{{ comment.user.username }}</strong>
+                  <div *ngIf="currentUserId === comment.user.idUser">
+                    <div class="dropdown">
+                      <button class="btn btn-link text-muted" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-ellipsis-v"></i>
+                      </button>
+                      <!-- Dropdown menu for Edit and Delete -->
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li><button class="dropdown-item" (click)="editComment(comment)">Edit</button></li>
+                        <li><button class="dropdown-item text-danger" (click)="deleteComment(menu.idMenu, comment.id)">Delete</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <p class="comment-text">{{ comment.text }}</p>
+              </div>
+            </div>
+
+            <div *ngIf="editingComment && editingComment.id === currentCommentId">
+    <textarea [(ngModel)]="editingComment.text"
+              class="form-control" rows="3"
+              placeholder="Edit your comment..."
+              (keydown.enter)="saveEditedComment()">
+    </textarea>
+
+            </div>
+            <!-- Load More Comments Button -->
+
+
+            <!-- Comment Input Box -->
+            <textarea *ngIf="!editingComment" [(ngModel)]="menu.newComment"
+                      class="form-control" rows="3"
+                      placeholder="Write a comment..."
+                      (keydown.enter)="addComment(menu.idMenu, 1, menu.newComment); $event.preventDefault()">
+            </textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Voir Plus Menus Button -->
+  <div *ngIf="displayedMenus.length < menus.length" class="text-center mt-4">
+    <button class="btn btn-outline-info btn-lg rounded-pill" (click)="loadMoreMenus()">
+      Voir Plus
+    </button>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+idMenu,nomMenu,statut,nutritionniste,plats,features
+1,Menu du Jour,VALIDE,,Salade César Pasta Primavera,Menu du Jour VALIDE  Salade César Pasta Primavera
+3,Menu du Mois,EN_ATTENTE,,Pasta Primavera,Menu du Mois EN_ATTENTE  Pasta Primavera
+4,Menu Test 1,REJETE,,Plat Test 1 Plat Test 10 Plat Test 9 Plat Test 4 Plat Test 6 Plat Test 5,Menu Test 1 REJETE  Plat Test 1 Plat Test 10 Plat Test 9 Plat Test 4 Plat Test 6 Plat Test 5
+5,Menu Test 2,REJETE,,Plat Test 3 Plat Test 7 Plat Test 10 Plat Test 6 Plat Test 9,Menu Test 2 REJETE  Plat Test 3 Plat Test 7 Plat Test 10 Plat Test 6 Plat Test 9
+6,Menu Test 3,EN_ATTENTE,,Plat Test 9 Plat Test 8 Plat Test 5 Plat Test 2 Plat Test 4 Plat Test 6,Menu Test 3 EN_ATTENTE  Plat Test 9 Plat Test 8 Plat Test 5 Plat Test 2 Plat Test 4 Plat Test 6
+7,Menu Test 4,VALIDE,,Plat Test 9 Plat Test 1 Plat Test 4 Plat Test 7 Plat Test 10 Plat Test 5,Menu Test 4 VALIDE  Plat Test 9 Plat Test 1 Plat Test 4 Plat Test 7 Plat Test 10 Plat Test 5
+8,Menu Test 5,REJETE,,Plat Test 4 Plat Test 6 Plat Test 3 Plat Test 8,Menu Test 5 REJETE  Plat Test 4 Plat Test 6 Plat Test 3 Plat Test 8
+9,Menu Test 6,REJETE,,Plat Test 10 Plat Test 3 Plat Test 7 Plat Test 4 Plat Test 1 Plat Test 6,Menu Test 6 REJETE  Plat Test 10 Plat Test 3 Plat Test 7 Plat Test 4 Plat Test 1 Plat Test 6
+10,Menu Test 7,VALIDE,,Plat Test 4 Plat Test 9 Plat Test 8,Menu Test 7 VALIDE  Plat Test 4 Plat Test 9 Plat Test 8
+11,Menu Test 8,EN_ATTENTE,,Plat Test 7 Plat Test 4 Plat Test 8 Plat Test 6 Plat Test 2 Plat Test 9,Menu Test 8 EN_ATTENTE  Plat Test 7 Plat Test 4 Plat Test 8 Plat Test 6 Plat Test 2 Plat Test 9
+12,Menu Test 9,REJETE,,Plat Test 7 Plat Test 4 Plat Test 5 Plat Test 1 Plat Test 8 Plat Test 2,Menu Test 9 REJETE  Plat Test 7 Plat Test 4 Plat Test 5 Plat Test 1 Plat Test 8 Plat Test 2
+13,Menu Test 10,VALIDE,,Plat Test 3 Plat Test 9 Plat Test 4 Plat Test 1,Menu Test 10 VALIDE  Plat Test 3 Plat Test 9 Plat Test 4 Plat Test 1
+14,Menu Test 11,EN_ATTENTE,,Plat Test 3 Plat Test 10 Plat Test 8 Plat Test 5 Plat Test 6 Plat Test 9,Menu Test 11 EN_ATTENTE  Plat Test 3 Plat Test 10 Plat Test 8 Plat Test 5 Plat Test 6 Plat Test 9
+15,Menu Test 12,REJETE,,Plat Test 9 Plat Test 8 Plat Test 3,Menu Test 12 REJETE  Plat Test 9 Plat Test 8 Plat Test 3
+16,Menu Test 13,EN_ATTENTE,,Plat Test 7 Plat Test 2 Plat Test 9,Menu Test 13 EN_ATTENTE  Plat Test 7 Plat Test 2 Plat Test 9
+17,Menu Test 14,VALIDE,,Plat Test 8 Plat Test 5 Plat Test 6 Plat Test 1 Plat Test 9,Menu Test 14 VALIDE  Plat Test 8 Plat Test 5 Plat Test 6 Plat Test 1 Plat Test 9
+18,Menu Test 15,EN_ATTENTE,,Plat Test 8 Plat Test 4 Plat Test 5,Menu Test 15 EN_ATTENTE  Plat Test 8 Plat Test 4 Plat Test 5
+19,Menu Test 16,EN_ATTENTE,,Plat Test 1 Plat Test 10 Plat Test 5 Plat Test 2,Menu Test 16 EN_ATTENTE  Plat Test 1 Plat Test 10 Plat Test 5 Plat Test 2
+20,Menu Test 17,VALIDE,,Plat Test 4 Plat Test 9 Plat Test 3 Plat Test 1 Plat Test 10,Menu Test 17 VALIDE  Plat Test 4 Plat Test 9 Plat Test 3 Plat Test 1 Plat Test 10
+21,Menu Test 18,EN_ATTENTE,,Plat Test 2 Plat Test 4 Plat Test 1 Plat Test 5,Menu Test 18 EN_ATTENTE  Plat Test 2 Plat Test 4 Plat Test 1 Plat Test 5
+22,Menu Test 19,VALIDE,,Plat Test 7 Plat Test 5 Plat Test 6 Plat Test 1 Plat Test 10 Plat Test 9,Menu Test 19 VALIDE  Plat Test 7 Plat Test 5 Plat Test 6 Plat Test 1 Plat Test 10 Plat Test 9
+23,Menu Test 20,REJETE,,Plat Test 3 Plat Test 9 Plat Test 7 Plat Test 4 Plat Test 5,Menu Test 20 REJETE  Plat Test 3 Plat Test 9 Plat Test 7 Plat Test 4 Plat Test 5

@@ -1,0 +1,18 @@
+package tn.esprit.pidevspringboot.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import tn.esprit.pidevspringboot.Entities.Menu.MenuLike;
+import tn.esprit.pidevspringboot.Entities.Menu.Menu;
+import tn.esprit.pidevspringboot.Entities.User.User;
+
+public interface LikeRepository extends JpaRepository<MenuLike, Long> {
+    MenuLike findByMenuAndUser(Menu menu, User user);
+
+    MenuLike findByMenu_IdMenuAndUser_IdUser(Long menuId, Long userId);
+
+    // Count the number of likes for a menu
+    long countByMenu_IdMenuAndStatus(Long menuId, MenuLike.LikeStatus status);
+
+    // Count the number of dislikes for a menu
+    long countByMenu_IdMenuAndStatusNot(Long menuId, MenuLike.LikeStatus status);
+}

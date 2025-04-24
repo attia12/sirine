@@ -1,0 +1,37 @@
+<div class="container my-5">
+  <h2 class="text-primary mb-4 fw-bold">📝 Ajouter un abonnement</h2>
+
+  <form (ngSubmit)="ajouterAbonnement()" #abonnementForm="ngForm">
+
+    <div class="mb-3">
+      <label for="idUser" class="form-label">ID de l'utilisateur</label>
+      <input type="number" id="idUser" [(ngModel)]="idUser" name="idUser" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="type" class="form-label">Type d’abonnement</label>
+      <select id="type" [(ngModel)]="typeAbonnement" name="typeAbonnement" class="form-select" required>
+        <option *ngFor="let type of typeOptions" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="duree" class="form-label">Durée</label>
+      <select id="duree" [(ngModel)]="dureeAbonnement" name="dureeAbonnement" class="form-select" required>
+        <option *ngFor="let duree of dureeOptions" [value]="duree">{{ duree }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="montant" class="form-label">Montant</label>
+      <input type="number" id="montant" [(ngModel)]="montant" name="montant" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="modePaiement" class="form-label">Mode de paiement</label>
+      <input type="text" id="modePaiement" [(ngModel)]="modePaiement" name="modePaiement" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+</div>

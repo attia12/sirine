@@ -1,0 +1,119 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Plat List</h2>
+
+  <!-- Add New Plat Button -->
+  <div class="text-center mb-4">
+    <button class="btn btn-success" (click)="openAddPlatModal()">
+      <i class="bi bi-plus-lg"></i> Add New Plat
+    </button>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let plat of plats" class="col-md-4">
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title">{{ plat.nomPlat }}</h5>
+          <p class="card-text">{{ plat.typePlat | titlecase }}</p>
+        </div>
+        <div class="card-body">
+          <p><strong>Calories:</strong> {{ plat.calories }}</p>
+          <p><strong>Regime:</strong> {{ plat.regime | titlecase }}</p>
+          <p><strong>Allergens:</strong> {{ plat.allergenes }}</p>
+
+          <!-- Plat Status -->
+          <div class="status">
+            <span class="badge" [ngClass]="{
+              'bg-success': plat.statutPlat === 'CONFIRME',
+              'bg-danger': plat.statutPlat === 'ANNULE',
+              'bg-warning': plat.statutPlat === 'EN_ATTENTE'
+            }">
+              {{ plat.statutPlat | titlecase }}
+            </span>
+          </div>
+
+          <!-- Update & Delete Buttons -->
+          <div class="text-center mt-3">
+            <button class="btn btn-warning btn-sm me-2" (click)="openEditPlatModal(plat)">
+              <i class="bi bi-pencil"></i> Update
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deletePlat(plat.idPlat)" >
+              <i class="bi bi-trash"></i> Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="platModal" #platModal tabindex="-1" aria-labelledby="platModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="platModalLabel">{{ isEditMode ? 'Edit Plat' : 'Add New Plat' }}</h5>
+        <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="isEditMode ? updatePlat() : addNewPlat()">
+          <!-- Plat Name -->
+          <div class="mb-3">
+            <label for="nomPlat" class="form-label">Plat Name</label>
+            <input type="text" class="form-control" id="nomPlat" [(ngModel)]="platForm.nomPlat" name="nomPlat" required />
+          </div>
+
+          <!-- Calories -->
+          <div class="mb-3">
+            <label for="calories" class="form-label">Calories</label>
+            <input type="number" class="form-control" id="calories" [(ngModel)]="platForm.calories" name="calories" required />
+          </div>
+
+          <!-- Regime -->
+          <div class="mb-3">
+            <label for="regime" class="form-label">Regime</label>
+            <select class="form-select" id="regime" [(ngModel)]="platForm.regime" name="regime" required>
+              <option value="VEGETARIEN">Vegetarian</option>
+              <option value="CARNIVORE">Carnivore</option>
+              <option value="VEGAN">Vegan</option>
+            </select>
+          </div>
+
+          <!-- Allergens -->
+          <div class="mb-3">
+            <label for="allergenes" class="form-label">Allergens</label>
+            <input type="text" class="form-control" id="allergenes" [(ngModel)]="platForm.allergenes" name="allergenes" />
+          </div>
+
+          <!-- Plat Status -->
+          <div class="mb-3">
+            <label for="statutPlat" class="form-label">Plat Status</label>
+            <select class="form-select" id="statutPlat" [(ngModel)]="platForm.statutPlat" name="statutPlat" required>
+              <option value="CONFIRME">Confirmed</option>
+              <option value="ANNULE">Cancelled</option>
+              <option value="EN_ATTENTE">Pending</option>
+            </select>
+          </div>
+
+          <!-- Plat Type -->
+          <div class="mb-3">
+            <label for="typePlat" class="form-label">Plat Type</label>
+            <select class="form-select" id="typePlat" [(ngModel)]="platForm.typePlat" name="typePlat" required>
+              <option value="PLAT_PRINCIPAL">Main Course</option>
+              <option value="ENTREE">Starter</option>
+              <option value="DESSERT">Dessert</option>
+            </select>
+          </div>
+
+          <!-- Menus Associated -->
+          <div class="mb-3">
+            <label for="menus" class="form-label">Associated Menus</label>
+            <select class="form-select" id="menus" [(ngModel)]="platForm.menuIds" name="menuIds" multiple>
+              <option *ngFor="let menu of menus" [value]="menu.idMenu">{{ menu.nomMenu }}</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-success">{{ isEditMode ? 'Update Plat' : 'Save Plat' }}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

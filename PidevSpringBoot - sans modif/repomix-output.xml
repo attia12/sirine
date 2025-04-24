@@ -1,0 +1,1835 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+<additional_info>
+
+</additional_info>
+
+</file_summary>
+
+<directory_structure>
+.gitattributes
+.gitignore
+.mvn/wrapper/maven-wrapper.properties
+mvnw
+mvnw.cmd
+pom.xml
+src/main/java/tn/esprit/pidevspringboot/Controller/AbonnementController.java
+src/main/java/tn/esprit/pidevspringboot/Controller/MenuController.java
+src/main/java/tn/esprit/pidevspringboot/Controller/PlatController.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Abonnement/Abonnement.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Abonnement/DureeAbonnement.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Abonnement/StatutAbonnement.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Abonnement/TypeAbonnement.java
+src/main/java/tn/esprit/pidevspringboot/Entities/ActiviteSportive/Activite.java
+src/main/java/tn/esprit/pidevspringboot/Entities/ActiviteSportive/Reservation.java
+src/main/java/tn/esprit/pidevspringboot/Entities/ActiviteSportive/Seance_sport.java
+src/main/java/tn/esprit/pidevspringboot/Entities/ActiviteSportive/Status.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Evenement/Evenement.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Evenement/InscriptionEvenement.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Evenement/StatutInscription.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Evenement/TypeEvenement.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Menu/Menu.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Menu/Plat.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Menu/StatutPlat.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Nutrition/DossierMedical.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Nutrition/GroupSanguin.java
+src/main/java/tn/esprit/pidevspringboot/Entities/Nutrition/RendezVous.java
+src/main/java/tn/esprit/pidevspringboot/Entities/User/Reclamation.java
+src/main/java/tn/esprit/pidevspringboot/Entities/User/Role.java
+src/main/java/tn/esprit/pidevspringboot/Entities/User/Roletype.java
+src/main/java/tn/esprit/pidevspringboot/Entities/User/User.java
+src/main/java/tn/esprit/pidevspringboot/PidevSpringBootApplication.java
+src/main/java/tn/esprit/pidevspringboot/Repository/AbonnementRepository.java
+src/main/java/tn/esprit/pidevspringboot/Repository/MenuRepository.java
+src/main/java/tn/esprit/pidevspringboot/Repository/PlatRepository.java
+src/main/java/tn/esprit/pidevspringboot/Service/AbonnementServiceImpl.java
+src/main/java/tn/esprit/pidevspringboot/Service/IAbonnementService.java
+src/main/java/tn/esprit/pidevspringboot/Service/IMenuService.java
+src/main/java/tn/esprit/pidevspringboot/Service/IPlatService.java
+src/main/java/tn/esprit/pidevspringboot/Service/MenuService.java
+src/main/java/tn/esprit/pidevspringboot/Service/PlatService.java
+src/main/resources/application.properties
+src/test/java/tn/esprit/pidevspringboot/PidevSpringBootApplicationTests.java
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".gitattributes">
+/mvnw text eol=lf
+*.cmd text eol=crlf
+</file>
+
+<file path=".gitignore">
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+</file>
+
+<file path=".mvn/wrapper/maven-wrapper.properties">
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+wrapperVersion=3.3.2
+distributionType=only-script
+distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.zip
+</file>
+
+<file path="mvnw">
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Apache Maven Wrapper startup batch script, version 3.3.2
+#
+# Optional ENV vars
+# -----------------
+#   JAVA_HOME - location of a JDK home dir, required when download maven via java source
+#   MVNW_REPOURL - repo url base for downloading maven distribution
+#   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+#   MVNW_VERBOSE - true: enable verbose log; debug: trace the mvnw script; others: silence the output
+# ----------------------------------------------------------------------------
+
+set -euf
+[ "${MVNW_VERBOSE-}" != debug ] || set -x
+
+# OS specific support.
+native_path() { printf %s\\n "$1"; }
+case "$(uname)" in
+CYGWIN* | MINGW*)
+  [ -z "${JAVA_HOME-}" ] || JAVA_HOME="$(cygpath --unix "$JAVA_HOME")"
+  native_path() { cygpath --path --windows "$1"; }
+  ;;
+esac
+
+# set JAVACMD and JAVACCMD
+set_java_home() {
+  # For Cygwin and MinGW, ensure paths are in Unix format before anything is touched
+  if [ -n "${JAVA_HOME-}" ]; then
+    if [ -x "$JAVA_HOME/jre/sh/java" ]; then
+      # IBM's JDK on AIX uses strange locations for the executables
+      JAVACMD="$JAVA_HOME/jre/sh/java"
+      JAVACCMD="$JAVA_HOME/jre/sh/javac"
+    else
+      JAVACMD="$JAVA_HOME/bin/java"
+      JAVACCMD="$JAVA_HOME/bin/javac"
+
+      if [ ! -x "$JAVACMD" ] || [ ! -x "$JAVACCMD" ]; then
+        echo "The JAVA_HOME environment variable is not defined correctly, so mvnw cannot run." >&2
+        echo "JAVA_HOME is set to \"$JAVA_HOME\", but \"\$JAVA_HOME/bin/java\" or \"\$JAVA_HOME/bin/javac\" does not exist." >&2
+        return 1
+      fi
+    fi
+  else
+    JAVACMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v java
+    )" || :
+    JAVACCMD="$(
+      'set' +e
+      'unset' -f command 2>/dev/null
+      'command' -v javac
+    )" || :
+
+    if [ ! -x "${JAVACMD-}" ] || [ ! -x "${JAVACCMD-}" ]; then
+      echo "The java/javac command does not exist in PATH nor is JAVA_HOME set, so mvnw cannot run." >&2
+      return 1
+    fi
+  fi
+}
+
+# hash string menuLike Java String::hashCode
+hash_string() {
+  str="${1:-}" h=0
+  while [ -n "$str" ]; do
+    char="${str%"${str#?}"}"
+    h=$(((h * 31 + $(LC_CTYPE=C printf %d "'$char")) % 4294967296))
+    str="${str#?}"
+  done
+  printf %x\\n $h
+}
+
+verbose() { :; }
+[ "${MVNW_VERBOSE-}" != true ] || verbose() { printf %s\\n "${1-}"; }
+
+die() {
+  printf %s\\n "$1" >&2
+  exit 1
+}
+
+trim() {
+  # MWRAPPER-139:
+  #   Trims trailing and leading whitespace, carriage returns, tabs, and linefeeds.
+  #   Needed for removing poorly interpreted newline sequences when running in more
+  #   exotic environments such as mingw bash on Windows.
+  printf "%s" "${1}" | tr -d '[:space:]'
+}
+
+# parse distributionUrl and optional distributionSha256Sum, requires .mvn/wrapper/maven-wrapper.properties
+while IFS="=" read -r key value; do
+  case "${key-}" in
+  distributionUrl) distributionUrl=$(trim "${value-}") ;;
+  distributionSha256Sum) distributionSha256Sum=$(trim "${value-}") ;;
+  esac
+done <"${0%/*}/.mvn/wrapper/maven-wrapper.properties"
+[ -n "${distributionUrl-}" ] || die "cannot read distributionUrl property in ${0%/*}/.mvn/wrapper/maven-wrapper.properties"
+
+case "${distributionUrl##*/}" in
+maven-mvnd-*bin.*)
+  MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/
+  case "${PROCESSOR_ARCHITECTURE-}${PROCESSOR_ARCHITEW6432-}:$(uname -a)" in
+  *AMD64:CYGWIN* | *AMD64:MINGW*) distributionPlatform=windows-amd64 ;;
+  :Darwin*x86_64) distributionPlatform=darwin-amd64 ;;
+  :Darwin*arm64) distributionPlatform=darwin-aarch64 ;;
+  :Linux*x86_64*) distributionPlatform=linux-amd64 ;;
+  *)
+    echo "Cannot detect native platform for mvnd on $(uname)-$(uname -m), use pure java version" >&2
+    distributionPlatform=linux-amd64
+    ;;
+  esac
+  distributionUrl="${distributionUrl%-bin.*}-$distributionPlatform.zip"
+  ;;
+maven-mvnd-*) MVN_CMD=mvnd.sh _MVNW_REPO_PATTERN=/maven/mvnd/ ;;
+*) MVN_CMD="mvn${0##*/mvnw}" _MVNW_REPO_PATTERN=/org/apache/maven/ ;;
+esac
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+[ -z "${MVNW_REPOURL-}" ] || distributionUrl="$MVNW_REPOURL$_MVNW_REPO_PATTERN${distributionUrl#*"$_MVNW_REPO_PATTERN"}"
+distributionUrlName="${distributionUrl##*/}"
+distributionUrlNameMain="${distributionUrlName%.*}"
+distributionUrlNameMain="${distributionUrlNameMain%-bin}"
+MAVEN_USER_HOME="${MAVEN_USER_HOME:-${HOME}/.m2}"
+MAVEN_HOME="${MAVEN_USER_HOME}/wrapper/dists/${distributionUrlNameMain-}/$(hash_string "$distributionUrl")"
+
+exec_maven() {
+  unset MVNW_VERBOSE MVNW_USERNAME MVNW_PASSWORD MVNW_REPOURL || :
+  exec "$MAVEN_HOME/bin/$MVN_CMD" "$@" || die "cannot exec $MAVEN_HOME/bin/$MVN_CMD"
+}
+
+if [ -d "$MAVEN_HOME" ]; then
+  verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  exec_maven "$@"
+fi
+
+case "${distributionUrl-}" in
+*?-bin.zip | *?maven-mvnd-?*-?*.zip) ;;
+*) die "distributionUrl is not valid, must match *-bin.zip or maven-mvnd-*.zip, but found '${distributionUrl-}'" ;;
+esac
+
+# prepare tmp dir
+if TMP_DOWNLOAD_DIR="$(mktemp -d)" && [ -d "$TMP_DOWNLOAD_DIR" ]; then
+  clean() { rm -rf -- "$TMP_DOWNLOAD_DIR"; }
+  trap clean HUP INT TERM EXIT
+else
+  die "cannot create temp dir"
+fi
+
+mkdir -p -- "${MAVEN_HOME%/*}"
+
+# Download and Install Apache Maven
+verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+verbose "Downloading from: $distributionUrl"
+verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+# select .zip or .tar.gz
+if ! command -v unzip >/dev/null; then
+  distributionUrl="${distributionUrl%.zip}.tar.gz"
+  distributionUrlName="${distributionUrl##*/}"
+fi
+
+# verbose opt
+__MVNW_QUIET_WGET=--quiet __MVNW_QUIET_CURL=--silent __MVNW_QUIET_UNZIP=-q __MVNW_QUIET_TAR=''
+[ "${MVNW_VERBOSE-}" != true ] || __MVNW_QUIET_WGET='' __MVNW_QUIET_CURL='' __MVNW_QUIET_UNZIP='' __MVNW_QUIET_TAR=v
+
+# normalize http auth
+case "${MVNW_PASSWORD:+has-password}" in
+'') MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+has-password) [ -n "${MVNW_USERNAME-}" ] || MVNW_USERNAME='' MVNW_PASSWORD='' ;;
+esac
+
+if [ -z "${MVNW_USERNAME-}" ] && command -v wget >/dev/null; then
+  verbose "Found wget ... using wget"
+  wget ${__MVNW_QUIET_WGET:+"$__MVNW_QUIET_WGET"} "$distributionUrl" -O "$TMP_DOWNLOAD_DIR/$distributionUrlName" || die "wget: Failed to fetch $distributionUrl"
+elif [ -z "${MVNW_USERNAME-}" ] && command -v curl >/dev/null; then
+  verbose "Found curl ... using curl"
+  curl ${__MVNW_QUIET_CURL:+"$__MVNW_QUIET_CURL"} -f -L -o "$TMP_DOWNLOAD_DIR/$distributionUrlName" "$distributionUrl" || die "curl: Failed to fetch $distributionUrl"
+elif set_java_home; then
+  verbose "Falling back to use Java to download"
+  javaSource="$TMP_DOWNLOAD_DIR/Downloader.java"
+  targetZip="$TMP_DOWNLOAD_DIR/$distributionUrlName"
+  cat >"$javaSource" <<-END
+	public class Downloader extends java.net.Authenticator
+	{
+	  protected java.net.PasswordAuthentication getPasswordAuthentication()
+	  {
+	    return new java.net.PasswordAuthentication( System.getenv( "MVNW_USERNAME" ), System.getenv( "MVNW_PASSWORD" ).toCharArray() );
+	  }
+	  public static void main( String[] args ) throws Exception
+	  {
+	    setDefault( new Downloader() );
+	    java.nio.file.Files.copy( java.net.URI.create( args[0] ).toURL().openStream(), java.nio.file.Paths.get( args[1] ).toAbsolutePath().normalize() );
+	  }
+	}
+	END
+  # For Cygwin/MinGW, switch paths to Windows format before running javac and java
+  verbose " - Compiling Downloader.java ..."
+  "$(native_path "$JAVACCMD")" "$(native_path "$javaSource")" || die "Failed to compile Downloader.java"
+  verbose " - Running Downloader.java ..."
+  "$(native_path "$JAVACMD")" -cp "$(native_path "$TMP_DOWNLOAD_DIR")" Downloader "$distributionUrl" "$(native_path "$targetZip")"
+fi
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+if [ -n "${distributionSha256Sum-}" ]; then
+  distributionSha256Result=false
+  if [ "$MVN_CMD" = mvnd.sh ]; then
+    echo "Checksum validation is not supported for maven-mvnd." >&2
+    echo "Please disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  elif command -v sha256sum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | sha256sum -c >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  elif command -v shasum >/dev/null; then
+    if echo "$distributionSha256Sum  $TMP_DOWNLOAD_DIR/$distributionUrlName" | shasum -a 256 -c >/dev/null 2>&1; then
+      distributionSha256Result=true
+    fi
+  else
+    echo "Checksum validation was requested but neither 'sha256sum' or 'shasum' are available." >&2
+    echo "Please install either command, or disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties." >&2
+    exit 1
+  fi
+  if [ $distributionSha256Result = false ]; then
+    echo "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised." >&2
+    echo "If you updated your Maven version, you need to update the specified distributionSha256Sum property." >&2
+    exit 1
+  fi
+fi
+
+# unzip and move
+if command -v unzip >/dev/null; then
+  unzip ${__MVNW_QUIET_UNZIP:+"$__MVNW_QUIET_UNZIP"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -d "$TMP_DOWNLOAD_DIR" || die "failed to unzip"
+else
+  tar xzf${__MVNW_QUIET_TAR:+"$__MVNW_QUIET_TAR"} "$TMP_DOWNLOAD_DIR/$distributionUrlName" -C "$TMP_DOWNLOAD_DIR" || die "failed to untar"
+fi
+printf %s\\n "$distributionUrl" >"$TMP_DOWNLOAD_DIR/$distributionUrlNameMain/mvnw.url"
+mv -- "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain" "$MAVEN_HOME" || [ -d "$MAVEN_HOME" ] || die "fail to move MAVEN_HOME"
+
+clean || :
+exec_maven "$@"
+</file>
+
+<file path="mvnw.cmd">
+<# : batch portion
+@REM ----------------------------------------------------------------------------
+@REM Licensed to the Apache Software Foundation (ASF) under one
+@REM or more contributor license agreements.  See the NOTICE file
+@REM distributed with this work for additional information
+@REM regarding copyright ownership.  The ASF licenses this file
+@REM to you under the Apache License, Version 2.0 (the
+@REM "License"); you may not use this file except in compliance
+@REM with the License.  You may obtain a copy of the License at
+@REM
+@REM    http://www.apache.org/licenses/LICENSE-2.0
+@REM
+@REM Unless required by applicable law or agreed to in writing,
+@REM software distributed under the License is distributed on an
+@REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+@REM KIND, either express or implied.  See the License for the
+@REM specific language governing permissions and limitations
+@REM under the License.
+@REM ----------------------------------------------------------------------------
+
+@REM ----------------------------------------------------------------------------
+@REM Apache Maven Wrapper startup batch script, version 3.3.2
+@REM
+@REM Optional ENV vars
+@REM   MVNW_REPOURL - repo url base for downloading maven distribution
+@REM   MVNW_USERNAME/MVNW_PASSWORD - user and password for downloading maven
+@REM   MVNW_VERBOSE - true: enable verbose log; others: silence the output
+@REM ----------------------------------------------------------------------------
+
+@IF "%__MVNW_ARG0_NAME__%"=="" (SET __MVNW_ARG0_NAME__=%~nx0)
+@SET __MVNW_CMD__=
+@SET __MVNW_ERROR__=
+@SET __MVNW_PSMODULEP_SAVE=%PSModulePath%
+@SET PSModulePath=
+@FOR /F "usebackq tokens=1* delims==" %%A IN (`powershell -noprofile "& {$scriptDir='%~dp0'; $script='%__MVNW_ARG0_NAME__%'; icm -ScriptBlock ([Scriptblock]::Create((Get-Content -Raw '%~f0'))) -NoNewScope}"`) DO @(
+  IF "%%A"=="MVN_CMD" (set __MVNW_CMD__=%%B) ELSE IF "%%B"=="" (echo %%A) ELSE (echo %%A=%%B)
+)
+@SET PSModulePath=%__MVNW_PSMODULEP_SAVE%
+@SET __MVNW_PSMODULEP_SAVE=
+@SET __MVNW_ARG0_NAME__=
+@SET MVNW_USERNAME=
+@SET MVNW_PASSWORD=
+@IF NOT "%__MVNW_CMD__%"=="" (%__MVNW_CMD__% %*)
+@echo Cannot start maven from wrapper >&2 && exit /b 1
+@GOTO :EOF
+: end batch / begin powershell #>
+
+$ErrorActionPreference = "Stop"
+if ($env:MVNW_VERBOSE -eq "true") {
+  $VerbosePreference = "Continue"
+}
+
+# calculate distributionUrl, requires .mvn/wrapper/maven-wrapper.properties
+$distributionUrl = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionUrl
+if (!$distributionUrl) {
+  Write-Error "cannot read distributionUrl property in $scriptDir/.mvn/wrapper/maven-wrapper.properties"
+}
+
+switch -wildcard -casesensitive ( $($distributionUrl -replace '^.*/','') ) {
+  "maven-mvnd-*" {
+    $USE_MVND = $true
+    $distributionUrl = $distributionUrl -replace '-bin\.[^.]*$',"-windows-amd64.zip"
+    $MVN_CMD = "mvnd.cmd"
+    break
+  }
+  default {
+    $USE_MVND = $false
+    $MVN_CMD = $script -replace '^mvnw','mvn'
+    break
+  }
+}
+
+# apply MVNW_REPOURL and calculate MAVEN_HOME
+# maven home pattern: ~/.m2/wrapper/dists/{apache-maven-<version>,maven-mvnd-<version>-<platform>}/<hash>
+if ($env:MVNW_REPOURL) {
+  $MVNW_REPO_PATTERN = if ($USE_MVND) { "/org/apache/maven/" } else { "/maven/mvnd/" }
+  $distributionUrl = "$env:MVNW_REPOURL$MVNW_REPO_PATTERN$($distributionUrl -replace '^.*'+$MVNW_REPO_PATTERN,'')"
+}
+$distributionUrlName = $distributionUrl -replace '^.*/',''
+$distributionUrlNameMain = $distributionUrlName -replace '\.[^.]*$','' -replace '-bin$',''
+$MAVEN_HOME_PARENT = "$HOME/.m2/wrapper/dists/$distributionUrlNameMain"
+if ($env:MAVEN_USER_HOME) {
+  $MAVEN_HOME_PARENT = "$env:MAVEN_USER_HOME/wrapper/dists/$distributionUrlNameMain"
+}
+$MAVEN_HOME_NAME = ([System.Security.Cryptography.MD5]::Create().ComputeHash([byte[]][char[]]$distributionUrl) | ForEach-Object {$_.ToString("x2")}) -join ''
+$MAVEN_HOME = "$MAVEN_HOME_PARENT/$MAVEN_HOME_NAME"
+
+if (Test-Path -Path "$MAVEN_HOME" -PathType Container) {
+  Write-Verbose "found existing MAVEN_HOME at $MAVEN_HOME"
+  Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+  exit $?
+}
+
+if (! $distributionUrlNameMain -or ($distributionUrlName -eq $distributionUrlNameMain)) {
+  Write-Error "distributionUrl is not valid, must end with *-bin.zip, but found $distributionUrl"
+}
+
+# prepare tmp dir
+$TMP_DOWNLOAD_DIR_HOLDER = New-TemporaryFile
+$TMP_DOWNLOAD_DIR = New-Item -Itemtype Directory -Path "$TMP_DOWNLOAD_DIR_HOLDER.dir"
+$TMP_DOWNLOAD_DIR_HOLDER.Delete() | Out-Null
+trap {
+  if ($TMP_DOWNLOAD_DIR.Exists) {
+    try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+    catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+  }
+}
+
+New-Item -Itemtype Directory -Path "$MAVEN_HOME_PARENT" -Force | Out-Null
+
+# Download and Install Apache Maven
+Write-Verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
+Write-Verbose "Downloading from: $distributionUrl"
+Write-Verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
+
+$webclient = New-Object System.Net.WebClient
+if ($env:MVNW_USERNAME -and $env:MVNW_PASSWORD) {
+  $webclient.Credentials = New-Object System.Net.NetworkCredential($env:MVNW_USERNAME, $env:MVNW_PASSWORD)
+}
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$webclient.DownloadFile($distributionUrl, "$TMP_DOWNLOAD_DIR/$distributionUrlName") | Out-Null
+
+# If specified, validate the SHA-256 sum of the Maven distribution zip file
+$distributionSha256Sum = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.properties" | ConvertFrom-StringData).distributionSha256Sum
+if ($distributionSha256Sum) {
+  if ($USE_MVND) {
+    Write-Error "Checksum validation is not supported for maven-mvnd. `nPlease disable validation by removing 'distributionSha256Sum' from your maven-wrapper.properties."
+  }
+  Import-Module $PSHOME\Modules\Microsoft.PowerShell.Utility -Function Get-FileHash
+  if ((Get-FileHash "$TMP_DOWNLOAD_DIR/$distributionUrlName" -Algorithm SHA256).Hash.ToLower() -ne $distributionSha256Sum) {
+    Write-Error "Error: Failed to validate Maven distribution SHA-256, your Maven distribution might be compromised. If you updated your Maven version, you need to update the specified distributionSha256Sum property."
+  }
+}
+
+# unzip and move
+Expand-Archive "$TMP_DOWNLOAD_DIR/$distributionUrlName" -DestinationPath "$TMP_DOWNLOAD_DIR" | Out-Null
+Rename-Item -Path "$TMP_DOWNLOAD_DIR/$distributionUrlNameMain" -NewName $MAVEN_HOME_NAME | Out-Null
+try {
+  Move-Item -Path "$TMP_DOWNLOAD_DIR/$MAVEN_HOME_NAME" -Destination $MAVEN_HOME_PARENT | Out-Null
+} catch {
+  if (! (Test-Path -Path "$MAVEN_HOME" -PathType Container)) {
+    Write-Error "fail to move MAVEN_HOME"
+  }
+} finally {
+  try { Remove-Item $TMP_DOWNLOAD_DIR -Recurse -Force | Out-Null }
+  catch { Write-Warning "Cannot remove $TMP_DOWNLOAD_DIR" }
+}
+
+Write-Output "MVN_CMD=$MAVEN_HOME/bin/$MVN_CMD"
+</file>
+
+<file path="pom.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>tn.esprit</groupId>
+    <artifactId>PidevSpringBoot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>PidevSpringBoot</name>
+    <description>PidevSpringBoot</description>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <dependencies>
+        <!-- Spring Boot Starter JPA for database interactions -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Starter Web for creating REST APIs -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- MySQL Connector for connecting to MySQL database -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Spring Security for authentication and authorization -->
+
+
+
+
+        <!-- Lombok for reducing boilerplate code -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Spring Boot Starter Test for unit testing -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Spring Boot Starter Validation for validation annotations -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Controller/AbonnementController.java">
+package tn.esprit.pidevspringboot.Controller;
+
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import tn.esprit.pidevspringboot.Entities.Abonnement.Abonnement;
+import tn.esprit.pidevspringboot.Service.IAbonnementService;
+
+import java.util.List;
+
+@RestController
+@AllArgsConstructor
+@RequestMapping("/Abonnement")
+@Tag(name = "Gestion des abonnements")
+public class AbonnementController {
+
+    @Autowired
+    IAbonnementService iAbonnementService;
+
+    @Operation(description = "Affichage de tous les abonnements")
+    @GetMapping("/retrieveAllAbonnements")
+    public List<Abonnement> afficherAbonnements() {
+        return iAbonnementService.retrieveAllAbonnements();
+    }
+
+    @Operation(description = "Affichage d'un abonnement spécifique")
+    @GetMapping("/retrieveAbonnement/{id}")
+    public Abonnement afficherAbonnement(@PathVariable("id") Long id) {
+        return iAbonnementService.retrieveAbonnement(id);
+    }
+
+    @Operation(description = "Ajouter un abonnement")
+    @PostMapping("/addAbonnement")
+    public Abonnement ajouterAbonnement(@RequestBody Abonnement abonnement) {
+        return iAbonnementService.addAbonnement(abonnement);
+    }
+
+
+
+    @Operation(description = "Supprimer un abonnement")
+    @DeleteMapping("/deleteAbonnement/{id}")
+    public void deleteAbonnement(@PathVariable("id") Long id) {
+        iAbonnementService.deleteAbonnement(id);
+    }
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Controller/MenuController.java">
+package tn.esprit.pidevspringboot.Controller;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import tn.esprit.pidevspringboot.Entities.Menu.Menu;
+import tn.esprit.pidevspringboot.Service.IMenuService;
+import java.util.List;
+@RestController
+@RequestMapping("/menu")
+@Tag(name = "Gestion des menus")
+
+public class MenuController {
+    @Autowired
+    private IMenuService menuService;
+
+    @Operation(description = "Liste de tous les menus")
+    @GetMapping("/all")
+    public List<Menu> getAllMenus() {
+        return menuService.getAllMenus();
+    }
+
+    @Operation(description = "Affichage de menu par id")
+    @GetMapping("/{id}")
+    public Menu getMenuById(@PathVariable Long id) {
+        return menuService.getMenuById(id);
+    }
+
+    @Operation(description = "Affichage de menu par type")
+    @GetMapping("/type/{typeRepas}")
+    public List<Menu> getMenusByType(@PathVariable String typeRepas) {
+        return menuService.getMenusByTypeRepas(typeRepas);
+    }
+
+    @Operation(description = "L'ajout d'un menu ")
+    @PostMapping("/add")
+    public Menu createMenu(@RequestBody Menu menu) {
+        return menuService.saveMenu(menu);
+    }
+
+    @Operation(description = "Suppression d'un menu par id")
+    @DeleteMapping("/delete/{id}")
+    public void deleteMenu(@PathVariable Long id) {
+        menuService.deleteMenu(id);
+    }
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Controller/PlatController.java">
+package tn.esprit.pidevspringboot.Controller;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import tn.esprit.pidevspringboot.Entities.Menu.Plat;
+import tn.esprit.pidevspringboot.Service.IPlatService;
+import java.util.List;
+@RestController
+@RequestMapping("/plat")
+@Tag(name = "Gestion des plats")
+public class PlatController {
+    @Autowired
+    private IPlatService platService;
+
+    @Operation(description = "Liste de tous les plats")
+    @GetMapping("/all")
+    public List<Plat> getAllPlats() {
+        return platService.getAllPlats();
+    }
+
+    @Operation(description = "Affichage de plat par id")
+    @GetMapping("/{id}")
+    public Plat getPlatById(@PathVariable Long id) {
+        return platService.getPlatById(id);
+    }
+
+    @Operation(description = "Affichage de plat par type d'allergène")
+    @GetMapping("/allergene/{allergene}")
+    public List<Plat> getPlatsByAllergene(@PathVariable String allergene) {
+        return platService.getPlatsByAllergene(allergene);
+    }
+
+    @Operation(description = "L'ajout d'un plat")
+    @PostMapping("/add")
+    public Plat createPlat(@RequestBody Plat plat) {
+        return platService.savePlat(plat);
+    }
+
+    @Operation(description = "Suppression d'un plat")
+    @DeleteMapping("/delete/{id}")
+    public void deletePlat(@PathVariable Long id) {
+        platService.deletePlat(id);
+    }
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Abonnement/Abonnement.java">
+package tn.esprit.pidevspringboot.Entities.Abonnement;
+import jakarta.persistence.*;
+import lombok.Data;
+import tn.esprit.pidevspringboot.Entities.User.User;
+import java.util.Date;
+@Entity
+@Data
+
+
+public class Abonnement {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idAbonnement;
+
+    @ManyToOne
+    @JoinColumn(name = "id_user")
+    private User user;
+
+    @Enumerated(EnumType.STRING)
+    private TypeAbonnement typeAbonnement;
+
+    @Enumerated(EnumType.STRING)
+    private DureeAbonnement dureeAbonnement;
+
+    private Date dateCreation;
+    private Date dateFin;
+
+    @Enumerated(EnumType.STRING)
+    private StatutAbonnement statut;
+
+    private float montant;
+    private String modePaiement;
+
+    public Long getIdAbonnement() {
+        return idAbonnement;
+    }
+
+    public void setIdAbonnement(Long idAbonnement) {
+        this.idAbonnement = idAbonnement;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Date getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(Date dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public DureeAbonnement getDureeAbonnement() {
+        return dureeAbonnement;
+    }
+
+    public void setDureeAbonnement(DureeAbonnement dureeAbonnement) {
+        this.dureeAbonnement = dureeAbonnement;
+    }
+
+    public TypeAbonnement getTypeAbonnement() {
+        return typeAbonnement;
+    }
+
+    public void setTypeAbonnement(TypeAbonnement typeAbonnement) {
+        this.typeAbonnement = typeAbonnement;
+    }
+
+    public Date getDateFin() {
+        return dateFin;
+    }
+
+    public void setDateFin(Date dateFin) {
+        this.dateFin = dateFin;
+    }
+
+    public StatutAbonnement getStatut() {
+        return statut;
+    }
+
+    public void setStatut(StatutAbonnement statut) {
+        this.statut = statut;
+    }
+
+    public float getMontant() {
+        return montant;
+    }
+
+    public void setMontant(float montant) {
+        this.montant = montant;
+    }
+
+    public String getModePaiement() {
+        return modePaiement;
+    }
+
+    public void setModePaiement(String modePaiement) {
+        this.modePaiement = modePaiement;
+    }
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Abonnement/DureeAbonnement.java">
+package tn.esprit.pidevspringboot.Entities.Abonnement;
+
+public enum DureeAbonnement {
+    SEMESTRIEL, ANNUEL, MENSUEL
+
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Abonnement/StatutAbonnement.java">
+package tn.esprit.pidevspringboot.Entities.Abonnement;
+
+public enum StatutAbonnement {
+    ACTIF, EXPIRE, ANNULE
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Abonnement/TypeAbonnement.java">
+package tn.esprit.pidevspringboot.Entities.Abonnement;
+
+public enum TypeAbonnement {
+    BASIC, PREMIUM, VIP
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/ActiviteSportive/Activite.java">
+package tn.esprit.pidevspringboot.Entities.ActiviteSportive;
+
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import tn.esprit.pidevspringboot.Entities.User.User;
+
+import java.util.Set;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public class Activite {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_activite;
+
+    @Column(nullable = false)
+    private String nomActivite;
+
+    private String description;
+
+    @ManyToMany(mappedBy = "activite")
+    Set<User>user;
+    @OneToMany(mappedBy = "activite")
+    Set<Seance_sport> seance_sports;
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/ActiviteSportive/Reservation.java">
+package tn.esprit.pidevspringboot.Entities.ActiviteSportive;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
+import java.util.Date;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
+
+public class Reservation {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_reservation;
+
+    @Enumerated (EnumType.STRING)
+    Status status;
+
+    @Temporal(TemporalType.DATE)
+    private Date dateReservation;
+
+    @ManyToOne
+    Seance_sport seance_sport;
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/ActiviteSportive/Seance_sport.java">
+package tn.esprit.pidevspringboot.Entities.ActiviteSportive;
+
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
+import java.util.Date;
+import java.util.Set;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
+
+public class Seance_sport {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_seance")
+    private Long id_seance;
+
+
+    @Temporal(TemporalType.TIME)
+    private Date heureDebut;
+
+    @Temporal(TemporalType.TIME)
+    private Date heureFin;
+
+    @ManyToOne
+    Activite activite;
+
+    @OneToMany(mappedBy = "seance_sport")
+    Set<Reservation> reservations;
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/ActiviteSportive/Status.java">
+package tn.esprit.pidevspringboot.Entities.ActiviteSportive;
+
+public enum Status {
+    confirmé,En_attente,Annulé
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Evenement/Evenement.java">
+package tn.esprit.pidevspringboot.Entities.Evenement;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "evenement")
+public class Evenement {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idEvenement;
+
+    @Column(nullable = false, length = 255)
+    private String titre;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    @Column(nullable = false)
+    private LocalDateTime dateEvenement;
+
+    @Column(nullable = false, length = 255)
+    private String lieu;
+
+    @Column(nullable = true)
+    private Integer capaciteMax;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TypeEvenement typeEvenement; // Relation ENUM 1:1 avec TypeEvenement
+
+    @OneToMany(mappedBy = "evenement", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<InscriptionEvenement> inscriptions; // Relation 1:N avec InscriptionEvenement
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Evenement/InscriptionEvenement.java">
+package tn.esprit.pidevspringboot.Entities.Evenement;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import tn.esprit.pidevspringboot.Entities.User.User;
+
+
+import java.time.LocalDateTime;
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "inscription_evenement")
+public class InscriptionEvenement {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idInscription;
+
+    @ManyToOne
+    @JoinColumn(name = "id_user", nullable = false)
+    private User user; // Relation 1:N avec User
+
+    @ManyToOne
+    @JoinColumn(name = "id_evenement", nullable = false)
+    private Evenement evenement; // Relation 1:N avec Evenement
+
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime dateInscription;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private StatutInscription statutInscription; // Relation ENUM 1:1 avec StatutInscription
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Evenement/StatutInscription.java">
+package tn.esprit.pidevspringboot.Entities.Evenement;
+
+public enum StatutInscription {
+    EN_ATTENTE,
+    CONFIRMEE,
+    ANNULEE
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Evenement/TypeEvenement.java">
+package tn.esprit.pidevspringboot.Entities.Evenement;
+
+public enum TypeEvenement {
+    SPORTIF,
+    CONFERENCE,
+    ATELIER,
+    SOIREE
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Menu/Menu.java">
+package tn.esprit.pidevspringboot.Entities.Menu;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.Date;
+import java.util.List;
+
+@Entity
+@Data
+public class Menu {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idMenu;
+    private Date dateMenu;
+    private String typeRepas;
+
+    @OneToMany(mappedBy = "menu")
+    private List<Plat> plats;
+
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Menu/Plat.java">
+package tn.esprit.pidevspringboot.Entities.Menu;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Entity
+@Data
+
+public class Plat {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idPlat;
+    private String nomPlat;
+    private String categorie;
+    private int calories;
+    private String allergenes;
+
+    @ManyToOne
+    @JoinColumn(name = "id_menu", nullable = false)
+    private Menu menu;
+
+    @Enumerated(EnumType.STRING)
+    private StatutPlat statut;
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Menu/StatutPlat.java">
+package tn.esprit.pidevspringboot.Entities.Menu;
+
+public enum StatutPlat {
+    ANNULE, CONFIRME
+
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Nutrition/DossierMedical.java">
+package tn.esprit.pidevspringboot.Entities.Nutrition;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import tn.esprit.pidevspringboot.Entities.User.User;
+
+@Entity
+@Data
+public class DossierMedical {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idDossier;
+
+    @OneToOne
+    @JoinColumn(name = "id_user", nullable = false)
+    private User user;
+
+    private String maladies;
+    private String allergies;
+    private String objectifSante;
+    private String traitements;
+    private float imc;
+    private float tailles;
+    private float poids;
+
+    @Enumerated(EnumType.STRING)
+    private GroupSanguin groupeSanguin;
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Nutrition/GroupSanguin.java">
+package tn.esprit.pidevspringboot.Entities.Nutrition;
+
+public enum GroupSanguin {
+    A_NEG, A_POS, B_NEG, B_POS, AB_NEG, AB_POS, O_NEG, O_POS
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/Nutrition/RendezVous.java">
+package tn.esprit.pidevspringboot.Entities.Nutrition;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import tn.esprit.pidevspringboot.Entities.User.User;
+
+import java.util.Date;
+
+@Entity
+@Data
+public class RendezVous {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idRendezVous;
+
+    @ManyToOne
+    @JoinColumn(name = "id_user", nullable = false)
+    private User user;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateHeure;
+
+    private int duree;
+    private String remarque;
+    private boolean rappelEnvoye;
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/User/Reclamation.java">
+package tn.esprit.pidevspringboot.Entities.User;
+
+import jakarta.persistence.*;
+import lombok.*;
+import java.util.Date;
+
+@Entity
+@Table(name = "reclamation")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Reclamation {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_reclamation")
+    private Integer idReclamation;
+
+    @ManyToOne
+    @JoinColumn(name = "id_user", nullable = false)
+    private User user;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "date_reclamation", nullable = false)
+    private Date dateReclamation;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type_reclamation", nullable = false)
+    private TypeReclamation typeReclamation;
+
+    public enum TypeReclamation {
+        Problème_Repas, Problème_Salle_Sport
+    }
+
+    @Column(name = "description", columnDefinition = "TEXT", nullable = false)
+    private String description;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "statut", nullable = false)
+    private StatutReclamation statut;
+
+    public enum StatutReclamation {
+        En_Cours, Résolue, Non_Résolue
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "date_resolution")
+    private Date dateResolution;
+
+    @Column(name = "action", columnDefinition = "TEXT")
+    private String action;
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/User/Role.java">
+package tn.esprit.pidevspringboot.Entities.User;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "role")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Role {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_role")
+    private Integer id;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role_type", nullable = false, unique = true)
+    private Roletype roleType;
+
+
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/User/Roletype.java">
+package tn.esprit.pidevspringboot.Entities.User;
+
+public enum Roletype {
+    Etudiant,Admin,Responsable_menu,Coach,Nutritionniste
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Entities/User/User.java">
+package tn.esprit.pidevspringboot.Entities.User;
+
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
+import tn.esprit.pidevspringboot.Entities.Abonnement.Abonnement;
+import tn.esprit.pidevspringboot.Entities.ActiviteSportive.Activite;
+
+import java.util.*;
+
+@Entity
+@Table(name = "user")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_user")
+    private Long idUser;
+
+
+    @Column(name = "nom", length = 100, nullable = false)
+    private String nom;
+
+    @Column(name = "prenom", length = 100, nullable = false)
+    private String prenom;
+
+    @Column(name = "email", length = 255, unique = true, nullable = false)
+    private String email;
+
+    @Column(name = "mot_de_passe", length = 255, nullable = false)
+    private String motDePasse;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "date_naissance")
+    private Date dateNaissance;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "sexe", nullable = false)
+    private Sexe sexe;
+
+    public enum Sexe {
+        Homme, Femme, Autre
+    }
+
+    @Column(name = "photo_profil", length = 255)
+    private String photoProfil;
+
+    @Column(name = "numero_de_telephone")
+    private Integer numeroDeTelephone;
+
+    @ManyToOne
+    @JoinColumn(name = "id_role", nullable = false)
+    private Role role;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Reclamation> reclamations = new ArrayList<>();
+
+    @ManyToMany
+    Set<Activite> activite;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Abonnement> abonnements = new ArrayList<>();
+
+    public Long getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
+    }
+
+    public Date getDateNaissance() {
+        return dateNaissance;
+    }
+
+    public void setDateNaissance(Date dateNaissance) {
+        this.dateNaissance = dateNaissance;
+    }
+
+    public Sexe getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(Sexe sexe) {
+        this.sexe = sexe;
+    }
+
+    public String getPhotoProfil() {
+        return photoProfil;
+    }
+
+    public void setPhotoProfil(String photoProfil) {
+        this.photoProfil = photoProfil;
+    }
+
+    public Integer getNumeroDeTelephone() {
+        return numeroDeTelephone;
+    }
+
+    public void setNumeroDeTelephone(Integer numeroDeTelephone) {
+        this.numeroDeTelephone = numeroDeTelephone;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public List<Reclamation> getReclamations() {
+        return reclamations;
+    }
+
+    public void setReclamations(List<Reclamation> reclamations) {
+        this.reclamations = reclamations;
+    }
+
+    public Set<Activite> getActivite() {
+        return activite;
+    }
+
+    public void setActivite(Set<Activite> activite) {
+        this.activite = activite;
+    }
+
+    public List<Abonnement> getAbonnements() {
+        return abonnements;
+    }
+
+    public void setAbonnements(List<Abonnement> abonnements) {
+        this.abonnements = abonnements;
+    }
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/PidevSpringBootApplication.java">
+package tn.esprit.pidevspringboot;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class PidevSpringBootApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(PidevSpringBootApplication.class, args);
+    }
+
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Repository/AbonnementRepository.java">
+package tn.esprit.pidevspringboot.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import tn.esprit.pidevspringboot.Entities.Abonnement.Abonnement;
+
+public interface AbonnementRepository extends JpaRepository<Abonnement, Long> {
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Repository/MenuRepository.java">
+package tn.esprit.pidevspringboot.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import tn.esprit.pidevspringboot.Entities.Menu.Menu;
+
+import java.util.List;
+
+public interface MenuRepository extends JpaRepository<Menu, Long> {
+    List<Menu> findByTypeRepas(String typeRepas);
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Repository/PlatRepository.java">
+package tn.esprit.pidevspringboot.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import tn.esprit.pidevspringboot.Entities.Menu.Plat;
+
+import java.util.List;
+
+public interface PlatRepository extends JpaRepository<Plat, Long> {
+    List<Plat> findByAllergenesContaining(String allergene);
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Service/AbonnementServiceImpl.java">
+package tn.esprit.pidevspringboot.Service;
+
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import tn.esprit.pidevspringboot.Entities.Abonnement.Abonnement;
+import tn.esprit.pidevspringboot.Repository.AbonnementRepository;
+
+import java.util.List;
+
+
+@Service
+@AllArgsConstructor
+public class AbonnementServiceImpl implements IAbonnementService {
+    @Autowired
+    AbonnementRepository abonnementRepository;
+
+    @Override
+    public List<Abonnement> retrieveAllAbonnements() {
+        return abonnementRepository.findAll();
+    }
+
+    @Override
+    public Abonnement retrieveAbonnement(Long id) {
+        return abonnementRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Abonnement addAbonnement(Abonnement abonnement) {
+        return abonnementRepository.save(abonnement);
+    }
+
+
+
+    @Override
+    public void deleteAbonnement(Long id) {
+        abonnementRepository.deleteById(id);
+    }
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Service/IAbonnementService.java">
+package tn.esprit.pidevspringboot.Service;
+import tn.esprit.pidevspringboot.Entities.Abonnement.Abonnement;
+import java.util.List;
+import java.util.Optional;
+
+public interface IAbonnementService {
+    List<Abonnement> retrieveAllAbonnements();
+    Abonnement retrieveAbonnement(Long id);
+    Abonnement addAbonnement(Abonnement abonnement);
+    void deleteAbonnement(Long id);
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Service/IMenuService.java">
+package tn.esprit.pidevspringboot.Service;
+
+import tn.esprit.pidevspringboot.Entities.Menu.Menu;
+
+import java.util.List;
+
+public interface IMenuService {
+    List<Menu> getAllMenus();
+    Menu getMenuById(Long id);
+    List<Menu> getMenusByTypeRepas(String typeRepas);
+    Menu saveMenu(Menu menu);
+    void deleteMenu(Long id);
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Service/IPlatService.java">
+package tn.esprit.pidevspringboot.Service;
+
+import tn.esprit.pidevspringboot.Entities.Menu.Plat;
+
+import java.util.List;
+
+public interface IPlatService {
+    List<Plat> getAllPlats();
+    Plat getPlatById(Long id);
+    List<Plat> getPlatsByAllergene(String allergene);
+    Plat savePlat(Plat plat);
+    void deletePlat(Long id);
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Service/MenuService.java">
+package tn.esprit.pidevspringboot.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import tn.esprit.pidevspringboot.Entities.Menu.Menu;
+import tn.esprit.pidevspringboot.Repository.MenuRepository;
+
+import java.util.List;
+
+@Service
+public class MenuService implements IMenuService {
+    @Autowired
+    private MenuRepository menuRepository;
+
+    @Override
+    public List<Menu> getAllMenus() {
+        return menuRepository.findAll();
+    }
+
+    @Override
+    public Menu getMenuById(Long id) {
+        return menuRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Menu> getMenusByTypeRepas(String typeRepas) {
+        return menuRepository.findByTypeRepas(typeRepas);
+    }
+
+    @Override
+    public Menu saveMenu(Menu menu) {
+        return menuRepository.save(menu);
+    }
+
+    @Override
+    public void deleteMenu(Long id) {
+        menuRepository.deleteById(id);
+    }
+}
+</file>
+
+<file path="src/main/java/tn/esprit/pidevspringboot/Service/PlatService.java">
+package tn.esprit.pidevspringboot.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import tn.esprit.pidevspringboot.Entities.Menu.Plat;
+import tn.esprit.pidevspringboot.Repository.PlatRepository;
+
+import java.util.List;
+
+@Service
+public class PlatService implements IPlatService {
+    @Autowired
+    private PlatRepository platRepository;
+
+    @Override
+    public List<Plat> getAllPlats() {
+        return platRepository.findAll();
+    }
+
+    @Override
+    public Plat getPlatById(Long id) {
+        return platRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Plat> getPlatsByAllergene(String allergene) {
+        return platRepository.findByAllergenesContaining(allergene);
+    }
+
+    @Override
+    public Plat savePlat(Plat plat) {
+        return platRepository.save(plat);
+    }
+
+    @Override
+    public void deletePlat(Long id) {
+        platRepository.deleteById(id);
+    }
+}
+</file>
+
+<file path="src/main/resources/application.properties">
+spring.application.name=PidevSpringBoot
+
+
+
+#db configuration :
+
+spring.datasource.url=jdbc:mysql://localhost:3306/PidevF?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=
+# Hibernate (ORM)
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+#ddl-auto=update ? Met à jour automatiquement la structure des tables.
+#show-sql=true ? Affiche les requêtes SQL exécutées en base.
+
+server.servlet.context-path=/Menu
+#http://localhost:8080/Menu/swagger-ui/index.html
+</file>
+
+<file path="src/test/java/tn/esprit/pidevspringboot/PidevSpringBootApplicationTests.java">
+package tn.esprit.pidevspringboot;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class PidevSpringBootApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
+</file>
+
+</files>
