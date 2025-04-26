@@ -198,4 +198,11 @@ public class MenuService implements IMenuService {
     }
 
 
+
+    @Override
+    public List<Menu> searchMenus(String query) {
+        return menuRepository.findByNomMenuContainingIgnoreCaseAndConfirmeTrue(query);
+    }
+
+
 }

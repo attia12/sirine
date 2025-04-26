@@ -35,4 +35,8 @@ public interface IMenuService {
     Comment updateComment(Long menuId, Long commentId, CommentRequest commentRequest);
 
     void deleteComment(Long menuId, Long commentId);
+
+
+
+    List<Menu> searchMenus(String query);
 }

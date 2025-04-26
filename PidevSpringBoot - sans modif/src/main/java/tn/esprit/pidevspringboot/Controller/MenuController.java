@@ -9,6 +9,8 @@ import tn.esprit.pidevspringboot.Entities.Menu.Menu;
 import tn.esprit.pidevspringboot.Entities.Menu.MenuLike;
 import tn.esprit.pidevspringboot.Entities.PlatAssociationRequest;
 import tn.esprit.pidevspringboot.Service.IMenuService;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -102,6 +104,17 @@ public class MenuController {
     @DeleteMapping("/{menuId}/comment/{commentId}")
     public void deleteComment(@PathVariable Long menuId, @PathVariable Long commentId) {
         menuService.deleteComment(menuId, commentId);
+    }
+    @GetMapping("/search")
+    public List<Menu> searchMenus(@RequestParam(required = false) String query) {
+        if (query == null || query.trim().isEmpty()) {
+            return menuService.getConfirmedMenus(); // Show all confirmed menus
+        }
+        List<Menu> result = menuService.searchMenus(query);
+        if (result.isEmpty()) {
+            return new ArrayList<>();
+        }
+        return result;
     }
 
 

@@ -65,4 +65,10 @@ export class MenuService {
     return this.http.delete<void>(`${this.apiUrl}/${menuId}/comment/${commentId}`);
   }
 
+  searchMenus(query: string) {
+    return this.http.get<any[]>(`${this.apiUrl}/search`, {
+      params: { query}
+    });
+
+  }
 }

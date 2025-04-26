@@ -22,7 +22,12 @@ import { AbonnementsbackComponent } from './components/abonnementsback/abonnemen
 import { PlatComponent } from './backoff/pages/plat/plat.component';
 import { MenuComponent } from './backoff/pages/menu/menu.component';
 import { RecommendationsComponent } from './components/recommendations/recommendations.component';
-import { SwiperModule } from 'swiper/angular';
+import { ListMenuComponent } from './components/list-menu/list-menu.component';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web'
+export function playerFactory() {
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -39,7 +44,8 @@ import { SwiperModule } from 'swiper/angular';
     AbonnementsbackComponent,
     PlatComponent,
     MenuComponent,
-    RecommendationsComponent
+    RecommendationsComponent,
+    ListMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,7 @@ import { SwiperModule } from 'swiper/angular';
     BrowserAnimationsModule,
     NgbModule,
     ClipboardModule,
-    SwiperModule
+
 
   ],
   providers: [],

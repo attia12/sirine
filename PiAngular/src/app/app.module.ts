@@ -23,7 +23,11 @@ import { PlatComponent } from './backoff/pages/plat/plat.component';
 import { MenuComponent } from './backoff/pages/menu/menu.component';
 import { RecommendationsComponent } from './components/recommendations/recommendations.component';
 import { ListMenuComponent } from './components/list-menu/list-menu.component';
-
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web'
+export function playerFactory() {
+  return player;
+}
 
 @NgModule({
   declarations: [
@@ -52,6 +56,7 @@ import { ListMenuComponent } from './components/list-menu/list-menu.component';
     BrowserAnimationsModule,
     NgbModule,
     ClipboardModule,
+    LottieModule.forRoot({ player: playerFactory })
 
 
   ],

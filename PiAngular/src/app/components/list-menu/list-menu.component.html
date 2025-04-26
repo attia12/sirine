@@ -1,5 +1,19 @@
+
 <div class="container mt-5">
   <h2 class="text-center mb-5 font-weight-bold text-primary">Confirmed Menus</h2>
+  <div class="d-flex justify-content-center mb-4">
+  <div class="input-group w-50 shadow-sm mb-4">
+    <input type="text" class="form-control rounded-pill px-4 py-2"
+           placeholder="Search for a menu..."
+           [(ngModel)]="searchQuery"
+           (input)="onSearchChange()">
+    <div class="input-group-append ml-2">
+    <span class="input-group-text bg-white border-0">
+      <i class="fa fa-search text-primary"></i>
+    </span>
+    </div>
+  </div>
+  </div>
 
   <div class="row">
     <div class="col-md-4 mb-4" *ngFor="let menu of displayedMenus">
@@ -119,3 +133,12 @@
     </button>
   </div>
 </div>
+<div *ngIf="displayedMenus.length === 0 && searchQuery.trim()" class="text-center my-5">
+  <ng-lottie
+    [options]="lottieOptions"
+    [styles]="{ width: '300px', height: '300px', margin: '0 auto' }"
+    >
+  </ng-lottie>
+  <p class="text-muted mt-3">No menus found matching "{{ searchQuery }}".</p>
+</div>
+

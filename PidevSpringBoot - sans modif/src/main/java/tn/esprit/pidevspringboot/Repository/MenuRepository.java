@@ -10,4 +10,6 @@ public interface MenuRepository extends JpaRepository<Menu, Long> {
     List<Menu> findByStatut(StatutMenu statut);
 
     List<Menu> findByConfirme(boolean b);
+
+    List<Menu> findByNomMenuContainingIgnoreCaseAndConfirmeTrue(String query);
 }
