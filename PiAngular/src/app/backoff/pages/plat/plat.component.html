@@ -68,13 +68,17 @@
 
           <!-- Regime -->
           <div class="mb-3">
-            <label for="regime" class="form-label">Regime</label>
+            <label for="regime" class="form-label">Régime</label>
             <select class="form-select" id="regime" [(ngModel)]="platForm.regime" name="regime" required>
-              <option value="VEGETARIEN">Vegetarian</option>
-              <option value="CARNIVORE">Carnivore</option>
               <option value="VEGAN">Vegan</option>
+              <option value="VEGETARIEN">Végétarien</option>
+              <option value="SANS_GLUTEN">Sans Gluten</option>
+              <option value="SANS_LACTOSE">Sans Lactose</option>
+              <option value="HYPERPROTEINE">Hyperprotéiné</option>
+              <option value="CLASSIQUE">Classique</option>
             </select>
           </div>
+
 
           <!-- Allergens -->
           <div class="mb-3">

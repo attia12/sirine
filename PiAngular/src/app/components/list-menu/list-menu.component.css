@@ -200,3 +200,40 @@ body {
 .dropdown-item:hover {
   background-color: #f1f1f1;
 }
+
+.favorite-btn {
+  background: transparent;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.favorite-btn i {
+  font-size: 1.8rem;
+  color: #ffc107; /* Golden color */
+  transition: all 0.3s ease;
+}
+
+.favorite-btn:hover i {
+  color: #ff9800; /* Deeper gold when hovering */
+  transform: scale(1.2);
+}
+
+.favorite-btn.favorited {
+  background-color: #ffc107;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.5);
+  animation: pulse 1.5s infinite;
+}
+
+.favorite-btn.favorited i {
+  color: white;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+

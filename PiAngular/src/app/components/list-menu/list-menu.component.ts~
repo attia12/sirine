@@ -13,7 +13,6 @@ export class ListMenuComponent implements OnInit{
   menuCount = 3; // Number of menus to display initially
   visiblePlatCount: { [key: number]: number } = {}; // To track visible plats for each menu
   currentUserId=1;
-  favoriteMenuId: number | null = null;
 
   constructor(private menuService: MenuService, private cdr: ChangeDetectorRef) { }
 

@@ -67,6 +67,15 @@
               {{ menu.liked ? 'Liked' : menu.disliked ? 'Disliked' : 'Like' }}
               ({{ menu.likesCount }} Likes, {{ menu.dislikesCount }} Dislikes)
             </button>
+            <button class="btn btn-sm favorite-btn"
+                    [ngClass]="{'favorited': favoriteMenuId === menu.idMenu}"
+                    (click)="toggleFavorite(menu.idMenu)">
+              <i class="fa-star"
+                 [class.fas]="favoriteMenuId === menu.idMenu"
+                 [class.far]="favoriteMenuId !== menu.idMenu"></i>
+            </button>
+
+
             <button class="btn btn-sm rounded-pill btn-outline-secondary" (click)="toggleCommentBox(menu.idMenu)">
               <i class="fa fa-comment"></i> <!-- Comment icon -->
               <span class="badge bg-info ms-2">{{ menu.comments.length }}</span>
